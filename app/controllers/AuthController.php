@@ -11,12 +11,13 @@ class AuthController extends BaseController {
      */
     public function showLogin()
     {
+       // return View::make('login');
         // Verificamos que el usuario no esté autenticado
         if (Auth::check())
         {
             // Si está autenticado lo mandamos a la raíz donde estara el mensaje de bienvenida.
 
-            return Redirect::to('/');
+            return Redirect::to('dataform');
         }else{
             // Mostramos la vista login.blade.php (Recordemos que .blade.php se omite.)
             return View::make('login');

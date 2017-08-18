@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 */
  /*Route::get('/', function()
     {
-        return View::make('login');
+        return View::make('welcome');
     });*/
 
 Route::resource('data','ReportSeguimientoController');
@@ -42,8 +42,11 @@ Route::get('/dataform', array('before' => 'auth', function(){
     return View::make('ReportSeguimiento.index');
 }));
 Route::get('/', array('as' => 'home', function(){
-    return View::make('ReportSeguimiento.index');
-}))->before('auth');
+    return View::make('welcome');
+}));//->before('auth');
+/*Route::get('/', array('as' => 'home', function(){
+    return View::make('welcome');
+}))->before('auth');*/
 //for download excel
 Route::get('/download','HomeController@getDownload');
 
